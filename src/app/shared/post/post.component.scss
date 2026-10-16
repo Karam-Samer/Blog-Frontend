@@ -1,0 +1,55 @@
+@use '../../../variables' as *;
+
+.blog-post-card {
+  background-color: $bg-secondary;
+  border-radius: $radius-md;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition-duration: $transition-normal;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.blog-post-badge {
+  padding: 4px 10px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: fit-content;
+}
+
+.blog-post-avatar {
+  border: 2px solid $border-color;
+  width: 70%;
+  height: 80px;
+  object-fit: cover;
+}
+
+.blog-post-author {
+  color: $text-muted;
+}
+
+.blog-post-title {
+  color: $accent;
+  font-size: 19px;
+}
+
+.blog-post-date {
+  color: $text-muted;
+  font-size: 14px;
+  margin-block: 10px;
+}
+
+.blog-post-body {
+  color: $text-primary;
+  line-height: 1.7;
+}
+
+.blog-post-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

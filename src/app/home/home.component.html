@@ -1,0 +1,14 @@
+<div class="row">
+    @for (post of blogPosts(); track post.id) {
+    <div class="col-lg-12">
+        <app-post [post]="post" [buttons]="false"></app-post>
+    </div>
+    } @empty {
+    <p>No posts found.</p>
+    }
+</div>
+
+@if(totalPages() > 1) {
+<app-pagination [currentPage]="currentPage()" [totalPages]="totalPages()"
+    (pageChange)="onPageChange($event)"></app-pagination>
+}

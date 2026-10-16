@@ -1,0 +1,40 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ title() }}</h5>
+                <button type="button" id="closeModal" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #form="ngForm" (submit)="onSubmit(form)">
+                    <div class="mb-3">
+                        <label for="Title" class="form-label">Title :</label>
+                        <input type="text" class="form-control" id="Title" name="title" [(ngModel)]="post().title">
+                        @if(errors().title) {
+                        <div class="alert alert-danger mt-3">{{errors().title}}</div>
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label for="AuthorName" class="form-label">Author Name :</label>
+                        <input type="text" class="form-control" id="AuthorName" name="author_name"
+                            [(ngModel)]="post().author_name">
+                        @if(errors().author_name) {
+                        <div class="alert alert-danger mt-3">{{errors().author_name}}</div>
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label for="Body" class="form-label">Body :</label>
+                        <textarea class="form-control" id="Body" name="body" rows="3"
+                            [(ngModel)]="post().body"></textarea>
+                        @if(errors().body) {
+                        <div class="alert alert-danger mt-3">{{errors().body}}</div>
+                        }
+                    </div>
+
+                    <button type="submit" class="btn blog-form-submit py-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

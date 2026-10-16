@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'bootstrap/scss/bootstrap.scss';
+@use 'variables' as *;
+
+body {
+  background-color: $bg-primary;
+  color: $text-primary;
+  min-height: 100vh;
+}
+
+.blog-btn-accent {
+  background-color: $accent;
+  color: $bg-primary;
+  border-radius: $radius-sm;
+  padding: 10px 20px;
+  transition-duration: $transition-normal;
+
+  &:hover {
+    background-color: $accent-hover;
+    color: $bg-primary;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba($accent, 0.3);
+  }
+}
+
+.blog-btn-outline {
+  color: $accent;
+  border: 1px solid $accent;
+  transition-duration: $transition-normal;
+
+  &:hover {
+    background-color: rgba($accent, 0.1);
+    color: $accent-hover;
+    border-color: $accent-hover;
+  }
+}
+
+.blog-btn-danger-outline {
+  color: $danger;
+  border: 1px solid $danger;
+  transition-duration: $transition-normal;
+
+  &:hover {
+    background-color: rgba($danger, 0.1);
+    color: $danger-hover;
+    border-color: $danger-hover;
+  }
+}
+
+.blog-btn-restore {
+  color: #5b9bd5;
+  border: 1px solid #5b9bd5;
+  transition-duration: $transition-normal;
+
+  &:hover {
+    background-color: rgba(#5b9bd5, 0.1);
+    color: lighten(#5b9bd5, 10%);
+    border-color: lighten(#5b9bd5, 10%);
+  }
+}
+
+// ========== Modal Overrides ==========
+.modal-content {
+  background-color: $bg-secondary;
+  border: 1px solid $border-color;
+}
+
+.modal-header {
+  border-bottom: 1px solid $border-color;
+}
+
+.modal-title {
+  color: $accent;
+}
+
+.form-control {
+  background-color: $bg-primary;
+  border: 1px solid $border-color;
+  color: $text-primary;
+
+  &:focus {
+    background-color: $bg-primary;
+    color: $text-primary;
+    border-color: $accent;
+    box-shadow: 0 0 0 3px rgba($accent, 0.15);
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+.form-label {
+  color: $text-heading;
+}
+
+// ========== Pagination Custom ==========
+.page-link {
+  background-color: $bg-secondary;
+  border-color: $border-color;
+  color: $text-primary;
+  transition-duration: $transition-fast;
+
+  &:hover {
+    background-color: $bg-hover;
+    color: $accent;
+    border-color: $accent;
+  }
+}
+
+.page-item.active .page-link {
+  background-color: $accent;
+  border-color: $accent;
+  color: $bg-primary;
+}
+
+.page-item.disabled .page-link {
+  background-color: $bg-primary;
+  border-color: $border-color;
+  color: $text-muted;
+  opacity: 0.5;
+}
+
+// ========== Scrollbar ==========
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-color;
+  border-radius: 4px;
+
+  &:hover {
+    background: $text-muted;
+  }
+}

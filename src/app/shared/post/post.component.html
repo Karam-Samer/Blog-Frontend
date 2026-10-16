@@ -1,0 +1,32 @@
+<div class="blog-post-card" [class.d-none]="isDeleted()">
+    <div class="row">
+        @if(deletedAt() != null) {
+        <span class="badge text-bg-danger blog-post-badge">Deleted</span>
+        }
+        <div class="col-lg-2">
+            <div class="text-center">
+                <img src="https://via.placeholder.com/150" alt="" class="blog-post-avatar">
+                <h5 class="blog-post-author fs-5 mt-2">{{post().author_name}}</h5>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div>
+                <h5 class="blog-post-title fw-bold">{{post().title}}</h5>
+                <h6 class="blog-post-date">{{post().created_at}}</h6>
+                <p class="blog-post-body">{{post().body}}</p>
+                @if (buttons()) {
+                <div class="blog-post-actions">
+                    @if(deletedAt() == null) {
+                    <button class="btn blog-btn-outline px-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editPost(post())">Edit</button>
+                    <button class="btn blog-btn-danger-outline px-3" (click)="postDelete()">Delete</button>
+                    }
+                    @else {
+                    <button class="btn blog-btn-restore px-3" (click)="postRestore()">Restore</button>
+                    }
+                    <button class="btn blog-btn-danger-outline px-3" (click)="postForceDelete()">Force Delete</button>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

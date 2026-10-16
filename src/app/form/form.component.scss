@@ -1,0 +1,13 @@
+@use '../../variables' as *;
+
+.blog-form-submit {
+  background-color: $accent;
+  width: 100%;
+  transition-duration: $transition-normal;
+
+  &:hover {
+    background-color: $accent-hover;
+    color: $bg-primary;
+    transform: translateY(-1px);
+  }
+}
